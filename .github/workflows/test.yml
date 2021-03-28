@@ -23,12 +23,15 @@ jobs:
         node-version: 14.x
 #     - run: npm install --global windows-build-tools
     - run: sudo apt install build-essential
-    - name: Setup Network
+    - name: Kill previous connections Network
       working-directory: ./test-network
-      run: ls
-#     - run: ./network.sh down
-#     - run: ./network.sh up createChannel -c mychannel -ca
-#     - run: ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
+      run: ./network.sh down
+    - name: Setup connections network 01
+      working-directory: ./test-network
+      run: ./network.sh up createChannel -c mychannel -ca
+    - name: Setup connections network 02
+      working-directory: ./test-network
+      run: ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
 #     - run: cd ..
 #     - run: cd asset-transfer-basic
 #     - run: cd application-javascript
