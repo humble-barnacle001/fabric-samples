@@ -25,7 +25,8 @@ jobs:
       uses: actions/setup-node@v2.1.5
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install --global windows-build-tools
+#     - run: npm install --global windows-build-tools
+    - run: sudo apt install build-essential
     - run: cd fabric-samples/test-network
     - run: ./network.sh down
     - run: ./network.sh up createChannel -c mychannel -ca
