@@ -28,21 +28,21 @@ jobs:
         node-version: ${{ matrix.node-version }}
 #     - run: npm install --global windows-build-tools
     - run: sudo apt install build-essential
+    - run: cd test-network
     - run: ls
-    - run: cd test-network
-    - run: ./network.sh down
-    - run: ./network.sh up createChannel -c mychannel -ca
-    - run: ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
-    - run: cd ..
-    - run: cd asset-transfer-basic
-    - run: cd application-javascript
-    - run: npm install
-#     - run: node app.js
-    - run: cd ..
-    - run: cd ..
-    - run: cd fabric-samples
-    - run: cd test-network
-    - run: ./network.sh down
+#     - run: ./network.sh down
+#     - run: ./network.sh up createChannel -c mychannel -ca
+#     - run: ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
+#     - run: cd ..
+#     - run: cd asset-transfer-basic
+#     - run: cd application-javascript
+#     - run: npm install
+# #     - run: node app.js
+#     - run: cd ..
+#     - run: cd ..
+#     - run: cd fabric-samples
+#     - run: cd test-network
+#     - run: ./network.sh down
     
     
     
