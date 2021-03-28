@@ -23,6 +23,7 @@ jobs:
         node-version: 14.x
 #     - run: npm install --global windows-build-tools
     - run: sudo apt install build-essential
+    - run: curl -sSL https://bit.ly/2ysbOFE | bash -s
     - name: Kill previous connections Network
       working-directory: ./test-network
       run: ./network.sh down
