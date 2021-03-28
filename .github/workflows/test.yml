@@ -37,16 +37,13 @@ jobs:
     - name: Setup connections network 02
       working-directory: ./fabric-samples/test-network
       run: ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
-#     - run: cd ..
-#     - run: cd asset-transfer-basic
-#     - run: cd application-javascript
-#     - run: npm install
-# #     - run: node app.js
-#     - run: cd ..
-#     - run: cd ..
-#     - run: cd fabric-samples
-#     - run: cd test-network
-#     - run: ./network.sh down
+    - name: Setup connections network 02
+      working-directory: ./fabric-samples/asset-transfer-basic/application-javascrip
+      run: npm install
+#     - run: node app.js
+    - name: Kill current connections Network
+      working-directory: ./fabric-samples/test-network
+      run: ./network.sh down
     
     
     
