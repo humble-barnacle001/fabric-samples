@@ -24,19 +24,19 @@ jobs:
         node-version: 14.x
 #     - run: npm install --global windows-build-tools
     - run: sudo apt install build-essential
-#     - run: mkdir -p $HOME/go/src/github.com/humble-barnacle001
-    - run: export GOPATH=./
+    - run: mkdir -p $HOME/go/src/github.com/humble-barnacle001
+    - run: export GOPATH=$HOME/go/src/github.com/humble-barnacle001
     - name: Install binaries
-      working-directory: ./
+      working-directory: $HOME/go/src/github.com/humble-barnacle001
       run: curl -sSL https://bit.ly/2ysbOFE | bash -s
     - name: Kill previous connections Network
-      working-directory: ./test-network
+      working-directory: $HOME/go/src/github.com/humble-barnacle001/fabric-samples/test-network
       run: ./network.sh down
     - name: Setup connections network 01
-      working-directory: ./test-network
+      working-directory: $HOME/go/src/github.com/humble-barnacle001/fabric-samples/test-network
       run: ./network.sh up createChannel -c mychannel -ca
     - name: Setup connections network 02
-      working-directory: ./test-network
+      working-directory: $HOME/go/src/github.com/humble-barnacle001/fabric-samples/test-network
       run: ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
 #     - run: cd ..
 #     - run: cd asset-transfer-basic
