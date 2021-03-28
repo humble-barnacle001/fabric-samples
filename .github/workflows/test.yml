@@ -23,10 +23,10 @@ jobs:
         node-version: 14.x
 #     - run: npm install --global windows-build-tools
     - run: sudo apt install build-essential
-    - run: mkdir -p $Home/go/src
-    - run: export GOPATH:$Home/go/src
+    - run: mkdir -p $HOME/go/src
+    - run: export GOPATH:$HOME/go/src
     - name: Install binaries
-      working-directory: $Home/go/src
+      working-directory: $HOME/go/src
       run: curl -sSL https://bit.ly/2ysbOFE | bash -s
     - name: Kill previous connections Network
       working-directory: ./test-network
